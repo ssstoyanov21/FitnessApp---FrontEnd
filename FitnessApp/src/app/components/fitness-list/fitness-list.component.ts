@@ -15,8 +15,8 @@ export class FitnessListComponent {
   ngOnInit() {
     this.fitnessService.getAllFitnesses().subscribe(response => {
       this.data = response.fitness;
-    }, (err: BaseResponse) => {
-      console.log(err.errorMessage);
+    }, (err) => {
+      alert(err.error.errorMessage);
     })
   }
 

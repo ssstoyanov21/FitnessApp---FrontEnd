@@ -1,0 +1,103 @@
+ .container {
+     width: 80%;
+     background: #ffffff;
+     margin: 50px auto;
+     padding: 20px;
+ }
+
+ .details-form .control-form {
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 10px;
+ }
+
+ .details-form .control-form input {
+     height: 40px;
+ }
+
+ .details-form .btn-details {
+     border: 0;
+     background-color: #2d2dca;
+     display: block;
+     width: 20%;
+     margin: 0 auto;
+     height: 40px;
+     color: #fff;
+     font-size: 16px;
+     cursor: pointer;
+ }
+
+ .details-form .btn-details:hover {
+     background-color: #5656e3;
+ }
+
+ .details-form .details-header {
+     text-align: center;
+ }
+
+ .table-header {
+     text-align: center;
+     cursor: pointer;
+ }
+
+ .exercises-table,
+ .exercises-table th,
+ .exercises-table tr,
+ .exercises-table td {
+     border: 1px solid #fff;
+     width: 80%;
+     margin: 0 auto;
+     background-color: #54afff;
+     border-collapse: collapse;
+     text-align: center;
+ }
+
+ .exercises-table .muscle,
+ .exercises-table .name {
+     width: 30%;
+ }
+
+ .exercises-table th {
+     background-color: rgb(33, 97, 118);
+     color: #fff;
+ }
+
+ .exercises-table input {
+     width: 100%;
+ }
+
+ .add-exercise-btn {
+     display: block;
+     border: none;
+     background-color: #8080da;
+     color: #fff;
+     width: 50px;
+     border-radius: 50%;
+     padding: 20px;
+     cursor: pointer;
+     margin: 20px auto;
+ }
+
+ .add-exercise-btn:hover {
+    background-color: #9797d6;
+ }
+
+ .add-select {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #174bf3;
+    color: #fff;
+    border: none;
+    outline: none;
+    text-align: center;
+ }
+
+ .add-select:hover, .add-select option:hover {
+    background-color: #3c8eeb;
+ }
+ 
+ .clickable {
+    cursor: pointer;
+ }

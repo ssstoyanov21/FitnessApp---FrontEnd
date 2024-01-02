@@ -1,0 +1,51 @@
+.fitness-table,
+.fitness-table th,
+.fitness-table tr,
+.fitness-table td {
+    border: 1px solid #fff;
+    width: 100%;
+    background-color: #54afff;
+    border-collapse: collapse;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.fitness-table .number {
+    width: 10px;
+}
+
+.fitness-table .location,
+.fitness-table .name {
+    width: 40%;
+}
+
+
+.fitness-table th {
+    background-color: #216176;
+    color: #fff;
+}
+
+.container .add-fitness {
+    display: block;
+    width: 20%;
+    margin: 50px auto;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.container .add-fitness:hover {
+    background-color: #b1b1b1;
+    color: #fff;
+}
+
+.container .delete, .container .edit {
+    cursor: pointer;
+}
+.container .delete:hover, .container .edit:hover {
+    cursor: pointer;
+    color: #7d7d7d;
+}

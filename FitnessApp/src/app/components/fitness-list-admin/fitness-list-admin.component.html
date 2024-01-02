@@ -1,0 +1,19 @@
+<div class="container">
+<button (click)="create()" class="add-fitness">Add Fitness</button>
+    
+    <table class="fitness-table">
+        <tr>
+            <th class="number">Number</th>
+            <th class="name">Name</th>
+            <th class="location">Location</th>
+            <th colspan="2">More</th>
+        </tr>
+        <tr *ngFor="let fitness of data; index as i">
+            <td class="number">{{i+1}}</td>
+            <td class="name">{{fitness.name}}</td>
+            <td class="location">{{fitness.location}}</td>
+            <td (click)="edit(fitness.id)" class="edit">Edit</td>
+            <td (click)="deleteFitness(fitness.id)" class="delete" >Delete</td>
+        </tr>
+    </table>
+</div>

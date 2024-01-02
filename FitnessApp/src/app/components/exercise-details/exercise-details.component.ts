@@ -20,8 +20,8 @@ export class ExerciseDetailsComponent {
         this.fitnessService.getExerciseDetails(this.id).subscribe(response => {
           this.exerciseData = response.exercise;
           this.exerciseData = response.exercise
-        }, (err: BaseResponse) => {
-          console.log(err.errorMessage);
+        }, (err) => {
+          alert(err.error.errorMessage);
         })
       }
 

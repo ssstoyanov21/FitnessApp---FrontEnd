@@ -1,3 +1,6 @@
+.navigation {
+    margin-bottom: 40px;
+}
 .navigation ul{
     display: flex;
     justify-content: center;

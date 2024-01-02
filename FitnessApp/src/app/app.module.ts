@@ -12,6 +12,9 @@ import { FitnessDetailsComponent } from './components/fitness-details/fitness-de
 import { ExercisesListComponent } from './components/exercises-list/exercises-list.component';
 import { ExerciseDetailsComponent } from './components/exercise-details/exercise-details.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { FitnessListAdminComponent } from './components/fitness-list-admin/fitness-list-admin.component';
+import { FitnessDetailsAdminComponent } from './components/fitness-details-admin/fitness-details-admin.component';
+import { FitnessDetailsAdminResolver } from './resolver/fitness-details-admin.resolver';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     FitnessDetailsComponent,
     ExercisesListComponent,
     ExerciseDetailsComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    FitnessListAdminComponent,
+    FitnessDetailsAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     FormsModule,
     CommonModule,
   ],
-  providers: [],
+  providers: [FitnessDetailsAdminResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

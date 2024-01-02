@@ -22,8 +22,8 @@ export class FitnessDetailsComponent {
         this.fitnessService.getFitnessDetails(this.id).subscribe(response => {
           this.fitnessData = response.fitness;
           this.exercises = response.exercises
-        }, (err: BaseResponse) => {
-          console.log(err.errorMessage);
+        }, (err) => {
+         alert(err.error.errorMessage);
         })
       }
 
