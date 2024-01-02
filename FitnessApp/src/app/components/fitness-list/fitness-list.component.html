@@ -1,0 +1,17 @@
+<div class="container">
+<h2 class="fitness-header">Fitnesses</h2>
+    <div *ngFor="let fitness of data;" class="fitness-item">
+        <div class="fitness-item-name">
+            <span class="fitness-item-name-value">Name: {{fitness.name}}</span>           
+        </div>
+        <div class="fitness-item-type">
+            <span class="fitness-item-type-value">Type: {{fitness.type}}</span>           
+        </div>
+        <div class="fitness-item-location">
+            <span class="fitness-item-location-value">Location: {{fitness.location}}</span>           
+        </div>
+        <div class="fitness-item-footer">
+            <button class="btn-details" (click)="detailsClick(fitness.id)">Details</button>
+        </div>
+    </div>
+</div>

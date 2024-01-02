@@ -1,0 +1,14 @@
+<div class="container">
+    <h2 class="exercise-header">Exercises</h2>
+    <div *ngFor="let exercise of data;" class="exercise-item">
+        <div class="exercise-item-name">
+            <span class="exercise-item-name-value">Name: {{exercise.name}}</span>
+        </div>
+        <div class="exercise-item-musclePart">
+            <span class="exercise-item-musclePart-value">MusclePart: {{exercise.musclePart}}</span>
+        </div>
+        <div class="exercise-item-footer">
+            <button class="btn-details" (click)="detailsClick(exercise.id)">Details</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.navigation ul{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    width: 50%;
+    margin: 0 auto;
+
+    background: #fff;
+    list-style-type: none;
+    border-radius: 10px;
+}
+.navigation ul li {
+    background-color: aqua;
+    color: #000;
+}
+
+.navigation ul li a {
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    padding: 10px 20px;
+}
+
+.navigation ul li a:hover {
+    background-color: #129c9cad;
+    color: #ddd;
+}

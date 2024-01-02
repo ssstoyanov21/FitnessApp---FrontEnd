@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="fitness">
+        <div class="fitness-name">
+            <span class="fitness-name-value">{{fitnessData?.name}}</span>
+        </div>
+        <div class="fitness-type">
+            <span class="fitness-type-value">Type: {{fitnessData?.type}}</span>
+        </div>
+        <div class="fitness-location">
+            <span class="fitness-location-value">Location: {{fitnessData?.location}}</span>
+        </div>
+        <h3 *ngIf="exercises.length > 0" class="exercises-header">Exercises on this fitness</h3>
+        <table class="exercises-table" *ngIf="exercises.length > 0">
+            <tr>
+                <th class="name">
+                    Name
+                </th>
+                <th class="muscle">Muscle Part</th>
+                <th>More</th>
+            </tr>
+            <tr *ngFor="let exercise of exercises">
+                <td class="name">{{exercise.name}}</td>
+                <td class="muscle">{{exercise.musclePart}}</td>
+                <td class="details" (click)="exerciseDetails(exercise.id)">Details</td>
+            </tr>
+        </table>
+    </div>
+</div>

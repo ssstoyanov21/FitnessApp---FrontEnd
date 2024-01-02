@@ -7,11 +7,20 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  constructor(private http:HttpClient){}
+  constructor(private http: HttpClient) { }
   title = 'FitnessApp';
-  ngOnInit(){
-    this.http.get<any>("http://localhost:8000/api/fitness/all").subscribe(response =>{
+  public username: string = '';
+  private users: Array<any> = [];
+  ngOnInit() {
+    this.http.get<any>("http://localhost:8000/api/client/all").subscribe(response => {
       console.log(response);
+      this.users = response.clients;
     })
+    localStorage.setItem("role", "admin");
+  }
+  public isAdmin(username:string): boolean {
+    let user = this.users.find(user => user.email === username);
+    return user != null;
+    // return localStorage.getItem("role") === "admin";
   }
 }
