@@ -33,9 +33,6 @@ export class ExerciseDetailsAdminComponent {
       if (this.mode === 'edit') {
         this.exercise = data.exercise;
       }
-
-      console.log(data);
-      console.log('mode', this.mode);
     });
   }
   public createExercise() {

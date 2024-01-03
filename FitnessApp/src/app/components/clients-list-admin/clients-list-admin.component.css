@@ -1,7 +1,7 @@
-.exercises-table,
-.exercises-table th,
-.exercises-table tr,
-.exercises-table td {
+.clients-table,
+.clients-table th,
+.clients-table tr,
+.clients-table td {
     border: 1px solid #fff;
     width: 100%;
     background-color: #54afff;
@@ -11,22 +11,22 @@
     padding: 20px;
 }
 
-.exercises-table .number {
+.clients-table .number {
     width: 10px;
 }
 
-.exercises-table .muscle,
-.exercises-table .name {
+.clients-table .email,
+.clients-table .name {
     width: 40%;
 }
 
 
-.exercises-table th {
+.clients-table th {
     background-color: #216176;
     color: #fff;
 }
 
-.container .add-exercises {
+.container .add-client {
     display: block;
     width: 20%;
     margin: 50px auto;
@@ -37,7 +37,7 @@
     cursor: pointer;
 }
 
-.container .add-exercises:hover {
+.container .add-client:hover {
     background-color: #b1b1b1;
     color: #fff;
 }

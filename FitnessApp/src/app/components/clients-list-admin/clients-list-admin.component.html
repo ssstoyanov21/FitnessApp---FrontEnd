@@ -1,0 +1,20 @@
+<div class="container">
+    <button (click)="create()" class="add-client">Add client</button>
+        
+        <table class="clients-table">
+            <tr>
+                <th class="number">Number</th>
+                <th class="name">Name</th>
+                <th class="email">Email</th>
+                <th colspan="2">More</th>
+            </tr>
+            <tr *ngFor="let client of data; index as i">
+                <td class="number">{{i+1}}</td>
+                <td class="name">{{client.firstName}} {{client.lastName}}</td>
+                <td class="email">{{client.email}}</td>
+                <td (click)="edit(client.id)" class="edit">Edit</td>
+                <td (click)="deleteClient(client.id)" class="delete" >Delete</td>
+            </tr>
+        </table>
+    </div>
+    

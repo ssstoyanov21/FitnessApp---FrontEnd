@@ -12,32 +12,103 @@ import { FitnessDetailsAdminResolver } from './resolver/fitness-details-admin.re
 import { ExercisesListAdminComponent } from './components/exercises-list-admin/exercises-list-admin.component';
 import { ExerciseDetailsAdminComponent } from './components/exercise-details-admin/exercise-details-admin.component';
 import { ExerciseDetailsAdminResolver } from './resolver/exercise-details-admin.resolver';
+import { ClientsListAdminComponent } from './components/clients-list-admin/clients-list-admin.component';
+import { ClientDetailsAdminComponent } from './components/client-details-admin/client-details-admin.component';
+import { ClientDetailsAdminResolver } from './resolver/client-details-admin.resolver';
+import { LoginComponent } from './components/login/login.component';
+import { LoginResolver } from './resolver/login.resolver';
+import { RedirectResolver } from './resolver/redirect.resolver';
 
 const routes: Routes = [
-  { path: "fitnessList", component: FitnessListComponent },
-  { path: "clientsList", component: ClientsListComponent },
-  { path: "fitness/:id", component: FitnessDetailsComponent },
-  { path: "exercisesList", component: ExercisesListComponent },
-  { path: "exercise/:id", component: ExerciseDetailsComponent },
-  { path: "admin/fitnessList", component: FitnessListAdminComponent },
-  { path: "admin/exercisesList", component: ExercisesListAdminComponent },
   {
-    path: "admin/fitnessDetails/:mode/:id", component: FitnessDetailsAdminComponent, 
+    path: "fitnessList", component: FitnessListComponent,
     resolve: {
+      data: RedirectResolver
+    },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: "clientsList", component: ClientsListComponent,
+    resolve: {
+      data: RedirectResolver
+    },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: "fitness/:id", component: FitnessDetailsComponent,
+    resolve: {
+      data: RedirectResolver
+    },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: "exercisesList", component: ExercisesListComponent,
+    resolve: {
+      data: RedirectResolver
+    },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: "exercise/:id", component: ExerciseDetailsComponent,
+    resolve: {
+      data: RedirectResolver
+    },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: "admin/fitnessList", component: FitnessListAdminComponent,
+    resolve: {
+      data: RedirectResolver
+    },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: "admin/exercisesList", component: ExercisesListAdminComponent, resolve: {
+      data: RedirectResolver
+    },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: "admin/clientsList", component: ClientsListAdminComponent, resolve: {
+      data: RedirectResolver
+    },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: "admin/fitnessDetails/:mode/:id", component: FitnessDetailsAdminComponent,
+    resolve: {
+      resolver: RedirectResolver,
       data: FitnessDetailsAdminResolver
     },
     runGuardsAndResolvers: 'always'
   },
   {
-    path: "admin/exerciseDetails/:mode/:id", component: ExerciseDetailsAdminComponent, 
+    path: "admin/clientDetails/:mode/:id", component: ClientDetailsAdminComponent,
     resolve: {
+      resolver: RedirectResolver,
+      data: ClientDetailsAdminResolver
+    },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: "admin/exerciseDetails/:mode/:id", component: ExerciseDetailsAdminComponent,
+    resolve: {
+      resolver: RedirectResolver,
       data: ExerciseDetailsAdminResolver
     },
     runGuardsAndResolvers: 'always'
   },
+  {
+    path: "login", component: LoginComponent,
+    resolve: {
+      data: LoginResolver
+    },
+    runGuardsAndResolvers: 'always'
+  },
+
 
   { path: "error", component: ErrorPageComponent },
-  { path: '', redirectTo: '/fitnessList', pathMatch: 'full' }, // Default redirect to 'client'
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default redirect to 'client'
   { path: '**', redirectTo: '/error' }
 ];
 

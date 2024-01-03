@@ -47,14 +47,10 @@ export class FitnessDetailsAdminComponent implements OnInit {
         this.fitness = this.data.fitness;
         this.execisesToFitness = this.data.exercises;
       }
-
-      console.log(data);
-      console.log('mode', this.mode);
     });
 
     this.fitnessService.getAllExercises().subscribe(response => {
       this.exercises = response.exercises;
-      console.log('all', this.exercises)
     }, (err) => {
       alert(err.error?.errorMessage);
     })

@@ -22,7 +22,6 @@ export class ExercisesListAdminComponent {
 
   public deleteExercises(id: number) {
     if (confirm("Are you sure for deleting this exercise?")) {
-      console.log("deleted");
       this.fitnessService.deleteExercise(id).subscribe(_ => {
         this.data = this.data.filter(exercise => exercise.id !== id);
       })

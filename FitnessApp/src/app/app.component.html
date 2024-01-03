@@ -1,8 +1,15 @@
 <div class="container">
-    <nav class="navigation">
-        <ul>
+    <nav class="navigation" *ngIf="isLoggedIn()">
+        <ul *ngIf="isClient()">
             <li><a routerLink="/fitnessList">Fitnesses</a></li>
             <li><a routerLink="/exercisesList">Exercises</a></li>
+            <li><span (click)="logOut()">Log Out</span></li>
+        </ul>
+        <ul *ngIf="isAdmin()">
+            <li><a routerLink="/admin/clientsList">Clients</a></li>
+            <li><a routerLink="/admin/fitnessList">Fitnesses</a></li>
+            <li><a routerLink="/admin/exercisesList">Exercises</a></li>
+            <li><span (click)="logOut()">Log Out</span></li>
         </ul>
     </nav>
     <router-outlet></router-outlet>

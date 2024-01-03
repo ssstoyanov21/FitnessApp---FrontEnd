@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     gap: 5%;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
 
     background: #fff;
@@ -17,15 +17,16 @@
     color: #000;
 }
 
-.navigation ul li a {
+.navigation ul li a, .navigation ul li span {
     color: #000;
     text-decoration: none;
     width: 100%;
     display: block;
     padding: 10px 20px;
+    cursor: pointer;
 }
 
-.navigation ul li a:hover {
+.navigation ul li a:hover, .navigation ul li span:hover {
     background-color: #129c9cad;
     color: #ddd;
 }

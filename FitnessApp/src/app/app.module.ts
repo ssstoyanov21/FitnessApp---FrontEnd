@@ -18,6 +18,12 @@ import { FitnessDetailsAdminResolver } from './resolver/fitness-details-admin.re
 import { ExercisesListAdminComponent } from './components/exercises-list-admin/exercises-list-admin.component';
 import { ExerciseDetailsAdminComponent } from './components/exercise-details-admin/exercise-details-admin.component';
 import { ExerciseDetailsAdminResolver } from './resolver/exercise-details-admin.resolver';
+import { ClientsListAdminComponent } from './components/clients-list-admin/clients-list-admin.component';
+import { ClientDetailsAdminComponent } from './components/client-details-admin/client-details-admin.component';
+import { ClientDetailsAdminResolver } from './resolver/client-details-admin.resolver';
+import { LoginComponent } from './components/login/login.component';
+import { LoginResolver } from './resolver/login.resolver';
+import { RedirectResolver } from './resolver/redirect.resolver';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,10 @@ import { ExerciseDetailsAdminResolver } from './resolver/exercise-details-admin.
     FitnessListAdminComponent,
     FitnessDetailsAdminComponent,
     ExercisesListAdminComponent,
-    ExerciseDetailsAdminComponent
+    ExerciseDetailsAdminComponent,
+    ClientsListAdminComponent,
+    ClientDetailsAdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +49,7 @@ import { ExerciseDetailsAdminResolver } from './resolver/exercise-details-admin.
     FormsModule,
     CommonModule,
   ],
-  providers: [FitnessDetailsAdminResolver, ExerciseDetailsAdminResolver],
+  providers: [FitnessDetailsAdminResolver, ExerciseDetailsAdminResolver, ClientDetailsAdminResolver, LoginResolver, RedirectResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

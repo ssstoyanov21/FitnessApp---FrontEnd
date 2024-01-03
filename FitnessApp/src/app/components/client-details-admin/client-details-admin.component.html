@@ -1,0 +1,36 @@
+<div class="container">
+
+    <form class="details-form">
+        <h2 class="details-header">{{mode === 'create'? "Create" : "Edit"}} client</h2>
+        <div class="control-form">
+            <label for="firstName">First Name</label>
+            <input placeholder="firstName" type="text" name="firstName" id="firstName" [(ngModel)]="client.firstName"
+                required />
+        </div>
+        <div class="control-form">
+            <label for="lastName">Last Name</label>
+            <input placeholder="lastName" type="text" name="lastName" id="lastName" [(ngModel)]="client.lastName"
+                required />
+        </div>
+        <div class="control-form">
+            <label for="email">Email</label>
+            <input placeholder="email" type="text" name="email" id="email" [(ngModel)]="client.email" required />
+        </div>
+        <div class="control-form">
+            <label for="password">Password</label>
+            <input placeholder="password" type="password" name="password" id="password" [(ngModel)]="client.password"
+                required />
+        </div>
+        <div class="control-form">
+            <label for="age">age</label>
+            <input placeholder="age" type="number" min="1" max="200" name="age" id="age" [(ngModel)]="client.age"
+                required />
+        </div>
+        <div class="control-form">
+            <label for="kg">Weight</label>
+            <input placeholder="kg" type="number" min="0" max="250" step="any" step="any" name="kg" id="kg" [(ngModel)]="client.kg"
+                required />
+        </div>
+        <button class="btn-details" (click)="mode === 'create' ? createClient() : editClient()">{{mode === 'create'?
+            "Add" : "Edit"}}</button>
+    </form>

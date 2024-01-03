@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Role } from './enums/Role';
+import { FitnessService } from './services/fitness.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,20 +10,24 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  constructor(private http: HttpClient) { }
+  constructor(public service: FitnessService, private router: Router) { }
   title = 'FitnessApp';
-  public username: string = '';
-  private users: Array<any> = [];
-  ngOnInit() {
-    this.http.get<any>("http://localhost:8000/api/client/all").subscribe(response => {
-      console.log(response);
-      this.users = response.clients;
-    })
-    localStorage.setItem("role", "admin");
+  public role: Role = Role.ROLE_UNDEFINED;
+
+  public isAdmin() {
+    return this.service.getRole() === Role.ROLE_ADMIN;
   }
-  public isAdmin(username:string): boolean {
-    let user = this.users.find(user => user.email === username);
-    return user != null;
-    // return localStorage.getItem("role") === "admin";
+
+  public isClient() {
+    return this.service.getRole() === Role.ROLE_CLIENT
+  }
+
+  public isLoggedIn() {
+    return this.service.getRole() !== Role.ROLE_UNDEFINED;
+  }
+
+  public logOut(): void {
+    sessionStorage.removeItem('role');
+    this.router.navigate(['/login']);
   }
 }

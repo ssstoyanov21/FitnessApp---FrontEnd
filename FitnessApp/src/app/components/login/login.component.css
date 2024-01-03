@@ -1,0 +1,63 @@
+.container {
+    width: 80%;
+    background: #ffffff;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.details-form .control-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.details-form .details-header {
+    text-align: center;
+}
+
+.details-form .control-form input {
+    height: 40px;
+}
+
+.details-form .btn-details {
+    border: 0;
+    background-color: #2d2dca;
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.details-form .btn-details:hover {
+    background-color: #5656e3;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.password-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    padding: 0 10px;
+}
+
+.password-div input {
+    border: none;
+    width: 100%;
+}
+
+.password-div img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.password-div img:hover {
+    opacity: 0.5;
+}
