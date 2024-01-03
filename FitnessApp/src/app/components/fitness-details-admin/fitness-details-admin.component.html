@@ -19,7 +19,7 @@
         <button class="btn-details" (click)="mode === 'create' ? createFitness() : editFitness()">{{mode === 'create'?
             "Add" : "Edit"}}</button>
     </form>
-    <h3 class="table-header" (click)="isExercisesAdded = true" [hidden]="isExercisesAdded">Add Exercises to this fitness (click here)</h3>
+    <h3 class="table-header" (click)="isAdded()" [hidden]="isExercisesAdded">Add Exercises to this fitness (click here)</h3>
     <h3 class="table-header" (click)="isExercisesAdded = false" [hidden]="!isExercisesAdded">Hide Exercises to this fitness (click here)</h3>
     <div class="exercises" [hidden]="!isExercisesAdded">
         <table class="exercises-table">

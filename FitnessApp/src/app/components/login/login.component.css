@@ -17,6 +17,9 @@
 
 .details-form .control-form input {
     height: 40px;
+    padding: 0 10px;
+    outline: none;
+    border: 1px solid #000;
 }
 
 .details-form .btn-details {
@@ -48,8 +51,15 @@
 }
 
 .password-div input {
-    border: none;
+    border: none !important;
     width: 100%;
+    outline: none;
+    padding: 0 !important;
+
+}
+.password-div input:focus{
+    border: none;
+    outline: none;
 }
 
 .password-div img {

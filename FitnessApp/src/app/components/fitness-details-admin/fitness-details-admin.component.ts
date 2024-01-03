@@ -17,6 +17,7 @@ import { AddExerciseToFitnessRequest } from '../../server-api/requests/AddExerci
 export class FitnessDetailsAdminComponent implements OnInit {
   public data: GetFitnessDetailsResponse | undefined;
   public exercises: Array<Exercise> = [];
+  public exercisesTemp: Array<Exercise> = [];
   public fitness: Fitness = {
     id: 0,
     name: '',
@@ -46,16 +47,18 @@ export class FitnessDetailsAdminComponent implements OnInit {
         this.data = data as GetFitnessDetailsResponse;
         this.fitness = this.data.fitness;
         this.execisesToFitness = this.data.exercises;
+
       }
     });
 
     this.fitnessService.getAllExercises().subscribe(response => {
       this.exercises = response.exercises;
+      this.exercisesTemp = [...this.exercises];
     }, (err) => {
       alert(err.error?.errorMessage);
     })
   }
-  public createFitness() {
+  public createFitness(isNavigate:boolean = true) {
     let request: CreateFitnessRequest = {
       name: this.fitness.name,
       location: this.fitness.location,
@@ -63,7 +66,9 @@ export class FitnessDetailsAdminComponent implements OnInit {
     }
     this.fitnessService.createFitness(request).subscribe(_ => {
       alert("Succesfully added");
-      this.router.navigate(['admin/fitnessList'])
+      if(isNavigate){
+        this.router.navigate(['admin/fitnessList'])
+      }
     }, (err) => {
       alert(err.error.errorMessage)
     })
@@ -136,10 +141,17 @@ export class FitnessDetailsAdminComponent implements OnInit {
     }, (err) => { alert(err.error.errorMessage) })
   }
 
+  public isAdded(){
+     if(this.fitness.id === 0){
+      alert("Create fitness before")
+      return;
+    }
+    this.isExercisesAdded = true;
+  }
   public showSelect() {
     this.isAddedHidden = true
     if (this.data) {
-      this.exercises = this.data.exercises;
+       this.exercises = [...this.exercisesTemp];
     }
   }
 }
