@@ -1,0 +1,51 @@
+.exercises-table,
+.exercises-table th,
+.exercises-table tr,
+.exercises-table td {
+    border: 1px solid #fff;
+    width: 100%;
+    background-color: #54afff;
+    border-collapse: collapse;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.exercises-table .number {
+    width: 10px;
+}
+
+.exercises-table .location,
+.exercises-table .name {
+    width: 40%;
+}
+
+
+.exercises-table th {
+    background-color: #216176;
+    color: #fff;
+}
+
+.container .add-exercises {
+    display: block;
+    width: 20%;
+    margin: 50px auto;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.container .add-exercises:hover {
+    background-color: #b1b1b1;
+    color: #fff;
+}
+
+.container .delete, .container .edit {
+    cursor: pointer;
+}
+.container .delete:hover, .container .edit:hover {
+    cursor: pointer;
+    color: #7d7d7d;
+}

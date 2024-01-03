@@ -9,6 +9,8 @@ import { BaseResponse } from '../server-api/response/BaseResponse';
 import { CreateFitnessRequest } from '../server-api/requests/CreateFitnessRequest';
 import { UpdateFitnessRequest } from '../server-api/requests/UpdateFitnessRequest';
 import { AddExerciseToFitnessRequest } from '../server-api/requests/AddExerciseToFitnessRequest';
+import { CreateExerciseRequest } from '../server-api/requests/CreateExerciseRequest';
+import { UpdateExerciseRequest } from '../server-api/requests/UpdateExerciseRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -52,5 +54,17 @@ export class FitnessService {
   
   public addExerciseToFitness(request: AddExerciseToFitnessRequest): Observable<BaseResponse> {
     return this.http.post<BaseResponse>('http://localhost:8000/api/fitness/addExercise', request, this.httpOptions)
+  }
+
+  public deleteExercise(id: number): Observable<BaseResponse> {
+    return this.http.delete<BaseResponse>(`http://localhost:8000/api/exercises/delete/${id}`);
+  }
+
+  public createExercise(request: CreateExerciseRequest): Observable<BaseResponse> {
+    return this.http.post<BaseResponse>('http://localhost:8000/api/exercises/create', request, this.httpOptions)
+  }
+
+  public editExercise(id: number, request: UpdateExerciseRequest): Observable<BaseResponse> {
+    return this.http.put<BaseResponse>(`http://localhost:8000/api/exercises/update/${id}`, request, this.httpOptions)
   }
 }

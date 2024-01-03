@@ -1,0 +1,20 @@
+<div class="container">
+    <button (click)="create()" class="add-exercises">Add exercises</button>
+        
+        <table class="exercises-table">
+            <tr>
+                <th class="number">Number</th>
+                <th class="name">Name</th>
+                <th class="location">Muscle Part</th>
+                <th colspan="2">More</th>
+            </tr>
+            <tr *ngFor="let exercises of data; index as i">
+                <td class="number">{{i+1}}</td>
+                <td class="name">{{exercises.name}}</td>
+                <td class="location">{{exercises.musclePart}}</td>
+                <td (click)="edit(exercises.id)" class="edit">Edit</td>
+                <td (click)="deleteExercises(exercises.id)" class="delete" >Delete</td>
+            </tr>
+        </table>
+    </div>
+    

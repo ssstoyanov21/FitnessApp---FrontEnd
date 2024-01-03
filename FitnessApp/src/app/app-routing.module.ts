@@ -9,6 +9,9 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { FitnessListAdminComponent } from './components/fitness-list-admin/fitness-list-admin.component';
 import { FitnessDetailsAdminComponent } from './components/fitness-details-admin/fitness-details-admin.component';
 import { FitnessDetailsAdminResolver } from './resolver/fitness-details-admin.resolver';
+import { ExercisesListAdminComponent } from './components/exercises-list-admin/exercises-list-admin.component';
+import { ExerciseDetailsAdminComponent } from './components/exercise-details-admin/exercise-details-admin.component';
+import { ExerciseDetailsAdminResolver } from './resolver/exercise-details-admin.resolver';
 
 const routes: Routes = [
   { path: "fitnessList", component: FitnessListComponent },
@@ -17,10 +20,18 @@ const routes: Routes = [
   { path: "exercisesList", component: ExercisesListComponent },
   { path: "exercise/:id", component: ExerciseDetailsComponent },
   { path: "admin/fitnessList", component: FitnessListAdminComponent },
+  { path: "admin/exercisesList", component: ExercisesListAdminComponent },
   {
     path: "admin/fitnessDetails/:mode/:id", component: FitnessDetailsAdminComponent, 
     resolve: {
       data: FitnessDetailsAdminResolver
+    },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: "admin/exerciseDetails/:mode/:id", component: ExerciseDetailsAdminComponent, 
+    resolve: {
+      data: ExerciseDetailsAdminResolver
     },
     runGuardsAndResolvers: 'always'
   },

@@ -1,0 +1,31 @@
+<div class="container">
+
+    <form class="details-form">
+        <h2 class="details-header">{{mode === 'create'? "Create" : "Edit"}} exercise</h2>
+        <div class="control-form">
+            <label for="name">Name</label>
+            <input placeholder="name" type="text" name="name" id="name" [(ngModel)]="exercise.name" required />
+        </div>
+        <div class="control-form">
+            <label for="musclePart">MusclePart</label>
+            <input placeholder="musclePart" type="text" name="musclePart" id="musclePart"
+                [(ngModel)]="exercise.musclePart" required />
+        </div>
+        <div class="control-form">
+            <label for="description">Description</label>
+            <textarea placeholder="description" name="description" id="description" [(ngModel)]="exercise.description"
+                rows="10"></textarea>
+        </div>
+        <div class="control-form">
+            <label for="complexity">Complexity</label>
+            <input placeholder="complexity" type="number" min="1" max="10" name="complexity" id="complexity"
+                [(ngModel)]="exercise.complexity" required />
+        </div>
+        <div class="control-form">
+            <label for="fitnessType">FitnessType</label>
+            <input placeholder="fitnessType" type="text" name="fitnessType" id="fitnessType" [(ngModel)]="exercise.fitnessType"
+                required />
+        </div>
+        <button class="btn-details" (click)="mode === 'create' ? createExercise() : editExercise()">{{mode === 'create'?
+            "Add" : "Edit"}}</button>
+    </form>
