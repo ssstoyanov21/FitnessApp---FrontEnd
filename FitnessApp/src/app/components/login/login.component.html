@@ -9,7 +9,7 @@
         <div class="control-form">
             <label for="password">Password</label>
             <div class="password-div">
-                <input type="text" placeholder="password" type="password" name="password" id="password" [(ngModel)]="client.password" />
+                <input type="text" placeholder="password" type='{{isHidden ? "password" : "text" }}' name="password" id="password" [(ngModel)]="client.password" />
                 <img (click)="changeVisibility()" [hidden]="!isHidden" src="../../../assets/view.png" alt="View">
                 <img (click)="changeVisibility()" [hidden]="isHidden" src="../../../assets/hide.png" alt="Hide">
             </div>
